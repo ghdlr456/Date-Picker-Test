@@ -1,25 +1,19 @@
-//
-//  ViewController.swift
-//  Date Picker Test
-//
-//  Created by D7702_09 on 2018. 4. 11..
-//  Copyright © 2018년 lse. All rights reserved.
-//
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var datepiker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func DatePiker(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss a EE"
+        timeLabel.text = formatter.string(from: datepiker.date)
+    
     }
-
-
 }
-
